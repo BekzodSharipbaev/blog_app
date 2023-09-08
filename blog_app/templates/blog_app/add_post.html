@@ -1,0 +1,19 @@
+{% extends 'blog_app/base.html' %}
+{% load static %}
+{% block content %}
+  <h1>
+    Добавление поста
+  </h1>
+  <form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      {{ form.errors }}
+    </div>
+    <div class="div-btn">
+      <button type="submit">
+        Добавить
+      </button>
+    </div>
+  </form>
+{% endblock content %}
